@@ -7,6 +7,8 @@ class SettingController < ApplicationController
     @user = User.where(:user_id=>user_id).first
     p "set index"
     p @user
+
+    #アカウント情報でビューを分ける
     if @user.account_type == "twitter" then
       render 'setting/index_twitter'
     else

@@ -64,14 +64,17 @@ class LoginController < ApplicationController
 
     #すでにあるときは登録せずマイページへ
     unless User.where(:user_id => user.user_id) == nil
+      puts 'User data is already exists'
       redirect_to :controller => 'user' , :action => :index
     else
 
         #ユーザー情報を保存して個人ページへ
         if user.save
+          puts 'Userdata is saved. user_id is '+user.user_id.to_s
           redirect_to :controller => 'user' , :action => :index
         else
           flash[:notice] = "User save is failed"
+          puts "Userdata is not saved"
           redirect_to :controller => 'index' , :action => 'index'
         end
     end

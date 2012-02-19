@@ -9,10 +9,12 @@ class SettingController < ApplicationController
     p @user
 
     #アカウント情報でビューを分ける
-    if @user.account_type == "twitter" then
-      render 'setting/index_twitter'
-    else
-      render 'setting/index_google'
+    unless @user.account_type == nil then
+      if @user.account_type == "twitter" then
+        render 'setting/index_twitter'
+      else
+        render 'setting/index_google'
+      end
     end
 
     #ログインしていないときは戻す
