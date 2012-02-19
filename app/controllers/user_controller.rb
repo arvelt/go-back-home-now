@@ -45,7 +45,7 @@ class UserController < ApplicationController
 	months = Starttime.select('distinct created_at').where(:user_id =>user_id)
     p "eval month"
     p months
-    if months == nil then
+    if months.length == 0 then
         #登録がないときは当月
         @used_month << Time.now.strftime("%Y/%m")
     else
