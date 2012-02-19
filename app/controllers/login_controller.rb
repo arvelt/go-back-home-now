@@ -63,9 +63,9 @@ class LoginController < ApplicationController
 	session[:account_type] = user.account_type
 
     #すでにあるときは登録せずマイページへ
-    user = User.where(:user_id => user.user_id)
-    p user
-    unless user == nil
+    data = User.where(:user_id => user.user_id).first
+    p data
+    unless data == nil
       puts 'User data is already exists'
       redirect_to :controller => 'user' , :action => :index
     else
