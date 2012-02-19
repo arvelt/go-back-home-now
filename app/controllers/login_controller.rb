@@ -2,6 +2,8 @@ require 'json'
 
 class LoginController < ApplicationController
 
+  HOSTNAME = "http://go-back-home-now.heroku.com/"
+
   def index
   end
 

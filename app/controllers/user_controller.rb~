@@ -150,7 +150,7 @@ class UserController < ApplicationController
 
           dd = Time.new.strftime("%m/%d").to_s
           tt = tmp.time.strftime("%H:%M").to_s
-          msg = "もうおうちかえる！　"+ dd + "　" + tt + "　[by もうおうちかえる]"
+          msg = "もうおうちかえる！　"+ dd + "　" + tt + "　[by もうおうちかえる！]"
           Twitter.update( msg )
         end
       end

@@ -3,6 +3,7 @@ require 'twitter'
 
 class UserController < ApplicationController 
 
+  HOSTNAME = "http://go-back-home-now.heroku.com/"
   CONSUMER_KEY = 'aLLC79cZvRHKe8jawQaGA'
   CONSUMER_SERCRET = 'CMQp4Azbz1ad8bMcVqwQF0kmEE4MixkQpciqPmDc'
 
@@ -116,7 +117,7 @@ class UserController < ApplicationController
 
           dd = Time.new.strftime("%m/%d").to_s
           tt = tmp.time.strftime("%H:%M").to_s
-          msg = "さあはじめるよ！　"+ dd + "　" + tt +"　[by もうおうちかえる！]"
+          msg = "さあはじめるよ！　"+ dd + "　" + tt +"　["+HOSTNAME+"]"
           Twitter.update( msg )
         end
       end
@@ -150,7 +151,7 @@ class UserController < ApplicationController
 
           dd = Time.new.strftime("%m/%d").to_s
           tt = tmp.time.strftime("%H:%M").to_s
-          msg = "もうおうちかえる！　"+ dd + "　" + tt + "　[by もうおうちかえる！]"
+          msg = "もうおうちかえる！　"+ dd + "　" + tt + "　["+HOSTNAME+"]"
           Twitter.update( msg )
         end
       end
