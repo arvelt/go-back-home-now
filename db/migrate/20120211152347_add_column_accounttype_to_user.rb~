@@ -1,0 +1,9 @@
+class AddColumnAccounttypeToUser < ActiveRecord::Migration
+  def up
+    add_column :users , :account_type
+  end
+
+  def down
+    remove_column :users , :account_type
+  end
+end

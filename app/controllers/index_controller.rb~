@@ -1,0 +1,6 @@
+class IndexController < ApplicationController
+  def index
+	render_to
+  end
+
+end

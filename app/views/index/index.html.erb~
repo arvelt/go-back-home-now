@@ -1,0 +1,35 @@
+<%= render 'parts/head_in_body' unless session[:user_id] == nil %>
+<div id="login_linksinleft"></div>
+<div id="login_links">
+	<% if session[:user_id] == nil then %>
+		<div id="login_with_twitter">
+			<a href="/auth/twitter">twitterで認証</a>
+		</div>
+		<div id="login_with_gmail">
+			<a href="/auth/google_oauth2">googleで認証</a>			
+		</div>
+	<% else %>
+        <!--
+		<div id="login_goto_mypage">
+			<a href="/user/index">マイページへ</a>
+		</div>
+        -->
+		<div id="logout">
+			<a href="/user/logout">ログアウト</a>
+		</div>
+	<% end %>
+</div>
+<div id="login_msg_welcome">
+	<p>これからがんばる！　と思ったらボタンを押しましょう。</p>
+	<p>始めた時間が記録されます。</p>
+	<br>
+	<p>もうおうちかえる！　と思ったらボタンを押しましょう。</p>
+	<p>帰った時間が記録されます。</p>
+	<br>
+	<p>それぞれのボタンは１日に１回だけ押すことができます。</p>
+	<br>
+	<p>出退勤時間の管理に、</p>
+	<p>作業時間の管理に、</p>
+	<p>起床就寝時間の管理に、</p>
+	<p>使い方はあなた次第です。</p>
+</div>

@@ -1,0 +1,58 @@
+<%= render 'parts/head_in_body' %>
+<div class="menu">
+<div id="logout">
+	<%= form_tag({ :controller => 'user',:action => 'logout' }) do %>
+    <%= submit_tag 'ログアウト' %>
+    <%end%>
+</div>
+<div class="select_date">
+  <%= form_tag({ :controller => 'user',:action => 'index' }) do %>
+	<span id="select_date_selectbox">
+	<%= select_tag('selected_date', options_for_select( @used_month )) %>
+	</span>
+	<span id="select_date_submit">
+		<%= submit_tag '表示', :disable_with => '処理中...' %>
+	</span>
+  <% end %>
+</div>
+<div>
+
+<%= @notice %>
+<div id="presence_time"></div>
+<div id="submits_body">
+	<div class="submits_start">
+		<%= form_tag({ :controller => 'user',:action => 'add_start' }) do %>
+			<div class="field" >
+				<%= hidden_field_tag :staerttime , :time %>
+			</div>
+			<div class="actions">
+				<%= submit_tag 'はじめる',:confirm => '保存しても良いですか？',:disable_with => '処理中...' %>
+			</div>
+		<% end %>
+	</div>
+	<div class="submits_end">
+		<%= form_tag({ :controller => 'user',:action => 'add_end' }) do %>
+			<div class="field" >
+				<%= hidden_field_tag :endtime , :time %>
+			</div>
+			<div class="actions">
+				<%= submit_tag ' おわり ', :confirm => '保存しても良いですか？',:disable_with => '処理中...' %>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<table border="1px" class="time_table">
+  <tr class="time_tr">
+    <th class="time_th">日付</th>
+    <th class="time_th">始めた時間</th>
+    <th class="time_th">終わった時間</th>
+  </tr>
+<% @timeslist.each do |tlist| %>
+  <tr class="time_tr">
+    <td class="time_td"><%= tlist.date %></td>
+    <td class="time_td"><%= tlist.starttime %></td>
+    <td class="time_td"><%= tlist.endtime %></td>
+  </tr>
+<% end %>
+</table>

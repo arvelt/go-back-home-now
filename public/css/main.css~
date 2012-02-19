@@ -1,0 +1,202 @@
+/*
+ *	画面共通系
+ */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #EEE url(/images/bg.gif);
+	color: #444;
+	font: normal 85% "Lucida Sans Unicode",sans-serif;
+	margin: 0;
+}
+
+.container {
+	background: url(/images/bgcontainer.gif) repeat-y;
+	margin: 0 auto;
+	padding-bottom: 6px;
+	width: 767px;
+	height: 100% ;
+}
+
+.footer{
+	clear :both;
+	width : 100% ;
+	text-align: center ;
+	margin-top: 20px ;
+	margin-bottom: 5px ;
+}
+
+.title{
+    position : relative ;
+    height : 60px ;
+	width: 767px;
+}
+
+#title_logo{
+	text-align: center ;
+}
+
+#title_logo_sub{
+	position : relative;
+    top : -40px ;
+    left: 610px ;
+}
+
+#bodyhead{
+	text-align: center ;
+	margin-top: 5px ;
+	margin-bottom: 5px ;
+}
+.bodyhead_item{
+    display : inline-block;
+    border:solid 1px;
+    width: 180px;
+    height: 30px ;
+    background: #666666 ;
+}
+h3{
+    margin-left : 20px;
+}
+
+/*
+ *	トップページ
+ */
+p{
+	padding : 3px;
+}
+#login_msg_welcome{
+	margin-top: 50px;
+	text-align: center ;
+	clear:both;
+}
+
+#login_links{
+    margin : auto ;
+	font-size: 90%;
+	text-align: center ;
+	width : 100% ;
+}
+#login_with_twitter{
+	margin-bottom: 5px;
+}
+
+#login_with_gmail{
+	margin-top: 5px;
+}
+
+#login_goto_mypage{
+    margin-top : 15px;
+}
+/*
+ *	マイページ
+ */
+.menu{
+	text-align: right ;
+  margin-right : 60px ;    
+}
+#logout{
+}
+.select_date{
+	text-align: right ;
+    padding-top : 10px ;
+}
+#select_date_selectbox{
+}
+
+#select_date_submit{
+}
+
+#indexlogin{
+	text-align: right ;
+	vertical-align: top ;
+}
+
+#presence_time{
+	text-align: center ;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	font-weight: bold;
+	font-size: 200%;
+	clear:both;
+
+}
+
+#submits_body{
+	text-align:center;
+	margin-left : auto ; 
+	margin-right : auto ;
+	width: 183px;
+}
+
+.submits_start{
+	float:left ;
+	width:50%;
+	text-align:center;
+}
+.submits_end{
+	float:right ;
+	width:50%;
+	text-align:center;
+}
+
+.actions{
+	padding-top: 20px;
+	padding-bottom: 40px;	clear:both;
+
+}
+
+.time_table{
+	margin-left : auto ; 
+	margin-right : auto ;
+	width: 383px;
+	text-align: center ;
+	padding : 5px ;
+}
+
+.time_tr{
+}
+
+.time_th{
+	width : 100px;
+}
+
+.time_td{
+	padding : 4px ;
+}
+
+.submits{
+	margin: 0 auto;
+}
+
+/*
+ *  セッティング
+ */
+#setting_twitter_table{
+	margin: auto;
+}
+#setting_twitter_table th,td{
+	padding: 2px;
+}
+.index_google_msg{
+	text-align: center ;
+	margin-top: 10px;
+}
+#submit_setting{
+	#padding-right: 55px;
+	text-align: right ;    
+}
+/*
+ *	フッタ
+ */
+#site_templeet{
+	font-size: 70%;
+}
+
+#site_font{
+	font-size: 70%;
+}
