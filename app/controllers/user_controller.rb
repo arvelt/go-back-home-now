@@ -107,7 +107,7 @@ class UserController < ApplicationController
     tmp = Starttime.new
 	tmp.user_id = user_id
 	tmp.date = s_date
-	tmp.time = s_time.slice(0,2)+":"+s_time.slice(0,4);
+	tmp.time = s_time.slice(0,2)+":"+s_time.slice(2,2);
 
     if tmp.save then
 
@@ -124,7 +124,7 @@ class UserController < ApplicationController
             config.oauth_token_secret = session[:secret_key]
           end
 
-          dd = s_date.slice(4,6)+"/"+s_date.slice(6,8)
+          dd = s_date.slice(4,2)+"/"+s_date.slice(6,2)
           tt = tmp.time.strftime("%H:%M").to_s
           msg = "さあはじめるよ！　"+ dd + "-" + tt +"　["+HOSTNAME+"]"
           Twitter.update( msg )
@@ -168,7 +168,7 @@ class UserController < ApplicationController
             config.oauth_token_secret = session[:secret_key]
           end
 
-          dd = s_date.slice(4,6)+"/"+s_date.slice(6,8)
+          dd = s_date.slice(4,2)+"/"+s_date.slice(6,2)
           tt = tmp.time.strftime("%H:%M").to_s
           msg = "もうおうちかえる！　"+ dd + "-" + tt + "　["+HOSTNAME+"]"
           Twitter.update( msg )
