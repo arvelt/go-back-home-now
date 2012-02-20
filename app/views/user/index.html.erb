@@ -17,26 +17,32 @@
 </div>
 </div>
 
-<%= @notice %>
+<div id="err_msg"><%= @notice %></div>
 <div id="presence_time"></div>
 <div id="submits_body">
 	<div class="submits_start">
 		<%= form_tag({ :controller => 'user',:action => 'add_start' }) do %>
 			<div class="field" >
-				<%= hidden_field_tag :staerttime , :time %>
+				<%= hidden_field_tag :sdate , 'sd' %>
+			</div>
+			<div class="field" >
+				<%= hidden_field_tag :stime , 'st' %>
 			</div>
 			<div class="actions">
-				<%= submit_tag 'はじめる',:confirm => '保存しても良いですか？',:disable_with => '処理中...' %>
+				<%= submit_tag 'はじめる',:confirm => '保存しても良いですか？',:disable_with => '処理中...' ,:onClick=>'getPresentTime(sdate,stime)'%>
 			</div>
 		<% end %>
 	</div>
 	<div class="submits_end">
 		<%= form_tag({ :controller => 'user',:action => 'add_end' }) do %>
 			<div class="field" >
-				<%= hidden_field_tag :endtime , :time %>
+				<%= hidden_field_tag :edate , 'ed' %>
+			</div>
+			<div class="field" >
+				<%= hidden_field_tag :etime , 'et' %>
 			</div>
 			<div class="actions">
-				<%= submit_tag ' おわり ', :confirm => '保存しても良いですか？',:disable_with => '処理中...' %>
+				<%= submit_tag ' おわり ', :confirm => '保存しても良いですか？',:disable_with => '処理中...',:onClick=>'getPresentTime(edate,etime)' %>
 			</div>
 		<% end %>
 	</div>

@@ -43,6 +43,7 @@ body {
 	position : relative;
     top : -40px ;
     left: 610px ;
+    width: 50px ;
 }
 
 #bodyhead{
@@ -93,6 +94,10 @@ p{
 /*
  *	マイページ
  */
+#err_msg{
+  margin-left : 20px ;    
+}
+
 .menu{
 	text-align: right ;
   margin-right : 60px ;    

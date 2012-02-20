@@ -10,10 +10,10 @@
 </head>
 <body onload="jikoku()">
 <div class="container">
-    <div class="title">
+  <div class="title">
 	<div id="title_logo"><%= image_tag "/images/titlelogo.png" %></div>
 	<div id="title_logo_sub"><%= image_tag "/images/titlelogosub_a.png" %></div>
-    </div>
+  </div>
 	<%= yield %>
 	<div class="footer">
 	<p id="site_templeet">The design templeet by <a href="http://arcsin.se" target="new">http://arcsin.se</a></p>
