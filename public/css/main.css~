@@ -43,7 +43,7 @@ body {
 	position : relative;
     top : -40px ;
     left: 610px ;
-    width:50px;
+    width:50px  ;
 }
 
 #bodyhead{
@@ -97,6 +97,9 @@ p{
 .menu{
 	text-align: right ;
   margin-right : 60px ;    
+}
+#err_msg{
+	margin-left: 20px;
 }
 #logout{
 }

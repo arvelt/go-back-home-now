@@ -1,5 +1,6 @@
 <%= render 'parts/head_in_body' %>
 <div class="menu">
+<div id="err_msg"><%= @notice %></div>
 <div id="logout">
 	<%= form_tag({ :controller => 'user',:action => 'logout' }) do %>
     <%= submit_tag 'ログアウト' %>
@@ -15,9 +16,8 @@
 	</span>
   <% end %>
 </div>
-<div>
+</div>
 
-<%= @notice %>
 <div id="presence_time"></div>
 <div id="submits_body">
 	<div class="submits_start">

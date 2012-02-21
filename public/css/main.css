@@ -98,6 +98,10 @@ p{
 	text-align: right ;
   margin-right : 60px ;    
 }
+#err_msg{
+	margin-top: 10px;
+	margin-left: 20px;
+}
 #logout{
 }
 .select_date{
