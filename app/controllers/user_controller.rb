@@ -47,13 +47,21 @@ class UserController < ApplicationController
     p months
     if months.length == 0 then
         #登録がないときは当月
+        puts "set this month"
         @used_month << Time.now.strftime("%Y/%m")
     else
-        #登録があればその月を表示、複数あれば降順にソート
+
+        #登録があればその月を表示
+        puts "set multi month"
 	    months.each do | list |
-		    @used_month << list.created_at.strftime("%Y/%m")
+		    @used_month << list.created_at.strftime("%Y/%m") if list.created_at
 	    end
-        @used_month.uniq!.sort!.reverse! unless @used_month.length == 1         	
+
+	    #複数あれば重複消して降順にソート
+	    unless @used_month.length == 1 then
+	      puts "do sort!"
+          @used_month.uniq!.sort!.reverse!
+        end
     end
 
 	#月初日と月末日を取得

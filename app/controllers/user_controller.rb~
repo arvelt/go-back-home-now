@@ -47,13 +47,21 @@ class UserController < ApplicationController
     p months
     if months.length == 0 then
         #登録がないときは当月
+        puts "set this month"
         @used_month << Time.now.strftime("%Y/%m")
     else
-        #登録があればその月を表示、複数あれば降順にソート
+    
+        #登録があればその月を表示
+        puts "set multi month"
 	    months.each do | list |
-		    @used_month << list.created_at.strftime("%Y/%m")
+		    @used_month << list.created_at.strftime("%Y/%m") if list.created_at
 	    end
-        @used_month.uniq!.sort!.reverse! unless @used_month.length == 1         	
+	    
+	    #複数あれば重複消して降順にソート
+	    unless @used_month.length == 1 then
+	      puts "do sort!"
+          @used_month.uniq!.sort!.reverse!
+        end
     end
 
 	#月初日と月末日を取得
@@ -149,11 +157,7 @@ class UserController < ApplicationController
             config.oauth_token_secret = session[:secret_key]
           end
 
-<<<<<<< HEAD
-          dd = s_date.slice(4,2)+"/"+s_date.slice(6,2)
-=======
           dd = Time.new.strftime("%m/%d").to_s
->>>>>>> parent of 8bad3a4... bug fix
           tt = tmp.time.strftime("%H:%M").to_s
           msg = "もうおうちかえる！　"+ dd + "　" + tt + "　["+HOSTNAME+"]"
           Twitter.update( msg )
