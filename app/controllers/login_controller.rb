@@ -32,16 +32,12 @@ class LoginController < ApplicationController
 	session[:secret_key] = data['credentials']['secret']
     
     #すでにあるときは登録せずマイページへ
-    data = User.where(:user_id => user.user_id).first
-    p data
-    unless data == nil
-      puts 'User data is already exists in t'
+    unless User.where(:user_id => user.user_id) == nil
       redirect_to :controller => 'user' , :action => :index
     else  
 
         #ユーザー情報を保存して個人ページへ
         if user.save
-          puts 'Userdata is saved in t. user_id is '+user.user_id.to_s
           redirect_to :controller => 'user' , :action => :index
         else
           flash[:notice] = "User save is failed"
@@ -70,13 +66,13 @@ class LoginController < ApplicationController
     data = User.where(:user_id => user.user_id).first
     p data
     unless data == nil
-      puts 'User data is already exists in g'
+      puts 'User data is already exists'
       redirect_to :controller => 'user' , :action => :index
     else
 
         #ユーザー情報を保存して個人ページへ
         if user.save
-          puts 'Userdata is saved in g. user_id is '+user.user_id.to_s
+          puts 'Userdata is saved. user_id is '+user.user_id.to_s
           redirect_to :controller => 'user' , :action => :index
         else
           flash[:notice] = "User save is failed"
