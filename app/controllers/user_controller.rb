@@ -54,7 +54,7 @@ class UserController < ApplicationController
         #登録があればその月を表示
         puts "set multi month"
 	    months.each do | list |
-		    @used_month << list.created_at.strftime("%Y/%m") if list.created_at
+		    @used_month << list.created_at.strftime("%Y/%m") unless list.created_at == nil
 	    end
 
 	    #複数あれば重複消して降順にソート
