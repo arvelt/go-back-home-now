@@ -92,24 +92,15 @@ class UserController < ApplicationController
   end
 
   def add_start
-
-    #パラメタ
-    puts "show starttime value"
-    puts params[:sdate]
-    puts params[:stime]
-    s_date = params[:sdate]
-    s_time = params[:stime]
-
-    #要パラメタチェック
-
 	#現在のユーザーにstart時間を追加する
-    user_id = session[:user_id]
-    tmp = Starttime.new
-	tmp.user_id = user_id
-	tmp.date = s_date
-	tmp.time = s_time.slice(0,2)+":"+s_time.slice(2,2);
+	
+	  user_id = session[:user_id]
+	  tmp = Starttime.new
+	  tmp.user_id = user_id
+	  tmp.date = Time.new.strftime("%Y%m%d").to_s
+	  tmp.time = Time.new.strftime("%H:%M").to_s
 
-    if tmp.save then
+	  if tmp.save then
 
       #ツイッターに投稿する設定なら投稿する
       if session[:account_type] == 'twitter' then
@@ -124,9 +115,9 @@ class UserController < ApplicationController
             config.oauth_token_secret = session[:secret_key]
           end
 
-          dd = s_date.slice(4,2)+"/"+s_date.slice(6,2)
+          dd = Time.new.strftime("%m/%d").to_s
           tt = tmp.time.strftime("%H:%M").to_s
-          msg = "さあはじめるよ！　"+ dd + "-" + tt +"　["+HOSTNAME+"]"
+          msg = "さあはじめるよ！　"+ dd + "　" + tt +"　["+HOSTNAME+"]"
           Twitter.update( msg )
         end
       end
@@ -138,22 +129,12 @@ class UserController < ApplicationController
   end
 
   def add_end
-
-    #パラメタ
-    puts "show endtime value"
-    puts params[:edate]
-    puts params[:etime]
-    s_date = params[:edate]
-    s_time = params[:etime]
-
-    #要パラメタチェック
-
 	#現在のユーザーにend時間を追加する
 	user_id = session[:user_id]
 	tmp = Endtime.new
 	tmp.user_id = user_id
-	tmp.date = s_date
-	tmp.time = s_time.slice(0,2)+":"+s_time.slice(0,4);
+	tmp.date = Time.new.strftime("%Y%m%d").to_s
+	tmp.time = Time.new.strftime("%H:%M").to_s
 
 	if tmp.save then
 
@@ -168,9 +149,13 @@ class UserController < ApplicationController
             config.oauth_token_secret = session[:secret_key]
           end
 
-          dd = s_date.slice(4,6)+"/"+s_date.slice(6,8)
+<<<<<<< HEAD
+          dd = s_date.slice(4,2)+"/"+s_date.slice(6,2)
+=======
+          dd = Time.new.strftime("%m/%d").to_s
+>>>>>>> parent of 8bad3a4... bug fix
           tt = tmp.time.strftime("%H:%M").to_s
-          msg = "もうおうちかえる！　"+ dd + "-" + tt + "　["+HOSTNAME+"]"
+          msg = "もうおうちかえる！　"+ dd + "　" + tt + "　["+HOSTNAME+"]"
           Twitter.update( msg )
         end
       end
