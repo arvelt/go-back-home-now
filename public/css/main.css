@@ -193,6 +193,10 @@ p{
 /*
  *	フッタ
  */
+#site_copyright{
+	font-size: 70%;
+}
+
 #site_templeet{
 	font-size: 70%;
 }
