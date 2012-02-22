@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: aaa
+  oauth_key: MyString
+  oauth_seacretkey: MyString
+
+two:
+  user_id: bbb
+  oauth_key: MyString
+  oauth_seacretkey: MyString

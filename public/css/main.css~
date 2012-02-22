@@ -32,7 +32,7 @@ body {
 .title{
     position : relative ;
     height : 60px ;
-	width: 767px;
+    width: 767px;
 }
 
 #title_logo{
@@ -42,7 +42,7 @@ body {
 #title_logo_sub{
 	position : relative;
     top : -40px ;
-    left: 610px ;
+    left: 600px ;
     width:50px  ;
 }
 
@@ -75,7 +75,7 @@ p{
 }
 
 #login_links{
-    margin : auto ;
+	margin-top: 20px;
 	font-size: 90%;
 	text-align: center ;
 	width : 100% ;
@@ -88,9 +88,6 @@ p{
 	margin-top: 5px;
 }
 
-#login_goto_mypage{
-    margin-top : 15px;
-}
 /*
  *	マイページ
  */
@@ -99,6 +96,7 @@ p{
   margin-right : 60px ;    
 }
 #err_msg{
+	margin-top: 10px;
 	margin-left: 20px;
 }
 #logout{
@@ -190,8 +188,7 @@ p{
 	margin-top: 10px;
 }
 #submit_setting{
-	#padding-right: 55px;
-	text-align: right ;    
+	text-align: right ;
 }
 /*
  *	フッタ

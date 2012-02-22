@@ -1,23 +1,22 @@
 <%= render 'parts/head_in_body' unless session[:user_id] == nil %>
-<div id="login_linksinleft"></div>
-<div id="login_links">
-	<% if session[:user_id] == nil then %>
-		<div id="login_with_twitter">
-			<a href="/auth/twitter">twitterで認証</a>
-		</div>
-		<div id="login_with_gmail">
-			<a href="/auth/google_oauth2">googleで認証</a>			
-		</div>
-	<% else %>
         <!--
-		<div id="login_goto_mypage">
-			<a href="/user/index">マイページへ</a>
-		</div>
+<div id="login_linksinleft"></div>
         -->
-		<div id="logout">
-			<a href="/user/logout">ログアウト</a>
-		</div>
-	<% end %>
+<div id="login_links">
+  <% if session[:user_id] == nil then %>
+    <div id="login_with_twitter">
+      <a href="/auth/twitter">twitterで認証</a>
+    </div>
+    <div id="login_with_gmail">
+      <a href="/auth/google_oauth2">googleで認証</a>			
+    </div>
+  <% else %>
+    <!--
+    <div id="login_goto_mypage">
+      <a href="/user/index">マイページへ</a>
+    </div>
+    -->
+<% end %>
 </div>
 <div id="login_msg_welcome">
 	<p>これからがんばる！　と思ったらボタンを押しましょう。</p>
