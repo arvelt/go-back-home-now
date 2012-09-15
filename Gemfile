@@ -31,6 +31,8 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter' 
 gem 'heroku'
 gem 'twitter', '= 2.1.0'
+gem 'execjs'
+gem 'therubyracer'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
