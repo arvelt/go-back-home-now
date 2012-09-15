@@ -1,7 +1,0 @@
-class Starttime < ActiveRecord::Base
-
-  simple_column_search :date
-
-  validates :date ,
-    :uniqueness => { :scope => :user_id }
-end

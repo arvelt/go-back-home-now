@@ -17,7 +17,7 @@ class LoginController < ApplicationController
 	end
 
     #omnioauthで認証しておいたところから取得して保存
-	#raise request.env["omniauth.auth"].to_yaml
+	raise request.env["omniauth.auth"].to_yaml
 	data = request.env["omniauth.auth"]
 
     user = User.new

@@ -1,4 +1,0 @@
-class AddColumnNameToUser < ActiveRecord::Migration
-  def change
-  end
-end
