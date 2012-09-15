@@ -3,7 +3,4 @@ db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
-config/initializers/twitter_id
-config/initializers/twitter_secret
-config/initializers/google_id
-config/initializers/google_secret
+
